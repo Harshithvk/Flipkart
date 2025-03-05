@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Pull SRC") {
             steps {
-                git 'https://github.com/rjn991/marcos'
+                git 'https://github.com/rjn991/instagram'
             }
         }
         stage("Prepare Build") {
