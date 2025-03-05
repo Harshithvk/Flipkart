@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Pull SRC") {
             steps {
-                git 'https://github.com/Harshithvk/Instagram'
+                git 'https://github.com/Harshithvk/Marcoss'
             }
         }
         stage("Prepare Build") {
@@ -16,14 +16,14 @@ pipeline {
         }
         stage("Copy *.war file to ansible") {
             steps {
-                sh 'mv target/Instagram.war .'
+                sh 'mv target/Marcoss.war .'
                 sshPublisher(
                     continueOnError: false, 
                     failOnError: true,
                     publishers: [
                         sshPublisherDesc(
                             configName: "marcos",
-                            transfers: [sshTransfer(sourceFiles: 'Instagram.war')],
+                            transfers: [sshTransfer(sourceFiles: 'Marcoss.war')],
                             verbose: true
                         )
                     ]
